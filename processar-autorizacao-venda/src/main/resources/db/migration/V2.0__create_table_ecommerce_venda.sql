@@ -1,0 +1,22 @@
+CREATE TABLE ECOMMERCE.VENDA
+(
+    ID                       BIGINT NOT NULL,
+    CANAL                    VARCHAR(100) NOT NULL,
+    CODIGO_EMPRESA           INTEGER NOT NULL,
+    CODIGO_LOJA              INTEGER NOT NULL,
+    NUMERO_PDV               INTEGER NOT NULL,
+    NUMERO_PEDIDO            VARCHAR(38) NOT NULL,
+    NUMERO_ORDEM_EXTERNO     VARCHAR(38) NOT NULL,
+    VALOR_TOTAL              DOUBLE PRECISION NOT NULL,
+    QTD_ITEM                 INTEGER NOT NULL,
+    VENDA_REQUEST            TEXT NOT NULL,
+    DATA_ATUALIZACAO         TIMESTAMP NOT NULL,
+    DATA_REQUISICAO          TIMESTAMP NOT NULL,
+    CHAVE_NFE                VARCHAR(44),
+    NUMERO_NOTA              BIGINT,
+    DATA_EMISSAO             TIMESTAMP,
+    PDF                      TEXT,
+    SITUACAO                 VARCHAR(100) NOT NULL,
+    MOTIVO                   VARCHAR(255),
+    CONSTRAINT PK_VENDA PRIMARY KEY (ID)
+);

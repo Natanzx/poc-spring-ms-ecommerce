@@ -1,0 +1,212 @@
+{
+	"info": {
+		"_postman_id": "fc614882-3229-4332-951a-08c1545baaef",
+		"name": "desafio-renner",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22368315"
+	},
+	"item": [
+		{
+			"name": "mock",
+			"item": [
+				{
+					"name": "mock - callback-venda",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Insomnia/2023.5.6"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"numeroPedido\": \"101628208632\",\n    \"numeroOrdemExterno\": \"100423672693-1\",\n    \"chaveNFE\": \"43210392754738001134550040000159551330237069\",\n    \"numeroNota\": \"0237069\",\n    \"dataEmissao\": \"2022-11-11T15:38:00.012\",\n    \"pdf\": \"NDMyMTAzOTI3NTQ3MzgwMDExMzQ1NTAwNDAwMDAxNTk1NTEzMzAyMzcwNjk=\",\n    \"status\": \"PROCESSADO\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/callback-venda",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"callback-venda"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mock - tributo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "User-Agent",
+								"value": "Insomnia/2023.5.6"
+							}
+						],
+						"url": {
+							"raw": "localhost:8082/tributo?sku=324226424",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"tributo"
+							],
+							"query": [
+								{
+									"key": "sku",
+									"value": "324226424"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "mock - sefaz",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"type": "text/javascript",
+								"exec": []
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"followRedirects": true,
+						"disableUrlEncoding": false,
+						"disableCookies": false
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "User-Agent",
+								"value": "Insomnia/2023.5.6"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"orderNumber\": \"101628208632\",\n    \"externalOrderNumber\": \"100423672693-1\",\n    \"customer\": {\n        \"id\": \"123456\",\n        \"name\": \"Givaldo Santos Vasconcelos\",\n        \"document\": \"70420816097\",\n        \"documentType\": \"CPF\",\n        \"personType\": \"F\",\n        \"address\": \"Travessa Francisco Vieira\",\n        \"addressNumber\": \"11\",\n        \"addressComplement\": \"Apto 405\",\n        \"district\": \"Trapiche da Barra\",\n        \"city\": \"Maceió\",\n        \"state\": \"AL\",\n        \"country\": \"BR\",\n        \"zipCode\": \"57010460\",\n        \"ibgeCode\": \"7162435\",\n        \"phoneNumber\": \"(82) 36774-7713\",\n        \"email\": \"givaldo.santos.vasconcelos@gmail.com\"\n    },\n    \"products\": [{\n            \"sku\": 324226428,\n            \"amount\": 3,\n            \"value\": 56.91,\n            \"icmsValue\": 38,\n            \"pisValue\": 12,\n            \"difaulValue\": 9,\n            \"fcpIcmsValue\": 58\n        }, {\n            \"sku\": 255227523,\n            \"amount\": 2,\n            \"value\": 79.90,\n            \"icmsValue\": 29,\n            \"pisValue\": 53,\n            \"difaulValue\": 90,\n            \"fcpIcmsValue\": 49\n        }, {\n            \"sku\": 333020086,\n            \"amount\": 1,\n            \"value\": 56.91,\n            \"icmsValue\": 82,\n            \"pisValue\": 58,\n            \"difaulValue\": 69,\n            \"fcpIcmsValue\": 24\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8082/authorize",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"authorize"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Canal - autorizar venda",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": []
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"followRedirects": true,
+				"disableUrlEncoding": false,
+				"disableCookies": false
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "User-Agent",
+						"value": "Insomnia/2023.5.6"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"canal\": \"APP\",\n    \"empresa\": \"00001\",\n    \"loja\": \"0001\",\n    \"pdv\": 501,\n    \"ordemPedido\": {\n        \"numeroPedido\": \"101628208632\",\n        \"numeroOrdemExterno\": \"100423672693-1\",\n        \"dataAutorizacao\": \"2022-11-11T15:37:56.194\"\n    },\n    \"cliente\": {\n        \"id\": \"123456\",\n        \"nome\": \"Givaldo Santos Vasconcelos\",\n        \"documento\": \"70420816097\",\n        \"tipoDocumento\": \"CPF\",\n        \"tipoPessoa\": \"F\",\n        \"endereco\": \"Travessa Francisco Vieira\",\n        \"numeroEndereco\": \"11\",\n        \"complementoEndereco\": \"Apto 405\",\n        \"bairro\": \"Trapiche da Barra\",\n        \"cidade\": \"Maceió\",\n        \"estado\": \"AL\",\n        \"pais\": \"BR\",\n        \"cep\": \"57010460\",\n        \"codigoIbge\": \"7162435\",\n        \"telefone\": \"(82) 36774-7713\",\n        \"email\": \"givaldo.santos.vasconcelos@gmail.com\"\n    },\n    \"totalItens\": 38744,\n    \"quantidadeItens\": 6,\n    \"itens\": [{\n            \"sku\": 324226428,\n            \"quantidade\": 3,\n            \"valor\": 5691\n        }, {\n            \"sku\": 286441499,\n            \"quantidade\": 2,\n            \"valor\": 7990\n        }, {\n            \"sku\": 183675297,\n            \"quantidade\": 1,\n            \"valor\": 5691\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/autorizar-venda",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"autorizar-venda"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
