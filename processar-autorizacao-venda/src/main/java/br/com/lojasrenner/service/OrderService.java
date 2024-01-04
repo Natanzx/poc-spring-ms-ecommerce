@@ -61,6 +61,7 @@ public class OrderService {
             log.info("Falha no processamento da venda, gravando os dados no banco...");
             VendaEntity vendaEntity = convertEventToEntity(request);
             vendaEntity.setSituacao(FALHA_AO_PROCESSAR);
+            vendaEntity.setMotivo(e.getMessage());
             repository.save(vendaEntity);
         }
     }

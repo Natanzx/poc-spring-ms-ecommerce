@@ -1,6 +1,7 @@
 package br.com.lojasrenner.domain.request;
 
 import jakarta.validation.constraints.NotEmpty;
+import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 
 import java.math.BigDecimal;
@@ -10,8 +11,8 @@ import static java.util.Objects.nonNull;
 
 public record ItemRequest(
         @NotEmpty String sku,
-        @Positive Integer quantidade,
-        @Positive BigDecimal valor) {
+        @NotNull @Positive Integer quantidade,
+        @NotNull @Positive BigDecimal valor) {
 
     public static final BigDecimal ONE_HUNDRED = BigDecimal.valueOf(100);
     public ItemRequest {

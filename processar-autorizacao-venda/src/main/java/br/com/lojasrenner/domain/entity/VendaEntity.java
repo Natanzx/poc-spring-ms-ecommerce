@@ -84,4 +84,6 @@ public class VendaEntity {
     @Enumerated(EnumType.STRING)
     private SituacaoType situacao;
 
+    @Column(name = "MOTIVO")
+    private String motivo;
 }
