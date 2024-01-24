@@ -28,7 +28,7 @@ public class KafkaConsumer {
         log.info("Headers: " + consumerRecord.headers());
         log.info("topic: " + consumerRecord.topic());
         log.info("Partion: " + consumerRecord.partition());
-        log.info("Person: " + consumerRecord.value());
+        log.info("Value: " + consumerRecord.value());
 
         AutorizarVendaRequest payload = consumerRecord.value();
         latch.countDown();

@@ -22,6 +22,8 @@ public class TributarioController {
     public ResponseEntity<TributatioResponse> buscarPorId(@PathParam("sku") String sku) {
         log.info("Solicitação para a Tributatio com o sku {}", sku);
 
+//        throw new RuntimeException();
+
         return listMock().stream()
             .filter(p -> p.sku().toString().equals(sku))
             .findFirst()
